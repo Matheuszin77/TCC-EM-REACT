@@ -1,0 +1,267 @@
+* {
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    filter: blur(0px) grayscale(30%);
+    z-index: -1;
+}
+
+nav {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+nav .logo {
+    flex-direction: row;
+    display: flex;
+}
+
+nav .logo h1 {
+    text-shadow:
+        0 0 3px #fff,
+        0 0 6px #fff;
+}
+
+nav ul {
+    gap: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    list-style: none;
+}
+
+nav li a {
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+nav li a:hover {
+    color: #ffffff;
+}
+
+nav li a:hover::after {
+    width: 100%;
+}
+
+form {
+    margin-top: 20vh;
+    height: auto;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3%;
+    padding: 30px;
+}
+
+form h1 {
+    text-shadow:
+        0 0 3px #fff,
+        0 0 6px #fff;
+    margin-bottom: 20px;
+}
+
+form h2 {
+    margin-bottom: 5px;
+}
+
+form h3 {
+    margin-bottom: 20px;
+}
+
+form .inputs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #f8f9fa;
+    background-color: #22252b;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button {
+    width: 70%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #22252b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #545761;
+    transform: scale(1.03);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cultos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+}
+
+.cultos input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+}
+
+.escala {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.escala th,
+.escala td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: left;
+    min-width: 100px;
+}
+
+.escala thead th {
+    background: #1b1a1a;
+    font-weight: bold;
+}
+
+.ministro { background: #f4a261; }
+.back1 { background: #f28482; }
+.back2 { background: #e76bf3; }
+.violao { background: #9b5de5; color: white; }
+.guitarra { background: #5c7cfa; color: white; }
+.baixo { background: #a1840c; }
+.teclado { background: #2b9348; color: white; }
+.som { background: #55a1ba; }
+
+.lista {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.lista h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.lista-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.lista-item span {
+    font-size: 14px;
+}
+
+.lista-item button {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 12px;
+    background: #dc3545;
+}
+
+.lista-item button:hover {
+    background: #c82333;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    form {
+        margin-top: 10vh;
+        width: 95%;
+    }
+
+    .escala th,
+    .escala td {
+        padding: 6px;
+        min-width: 70px;
+        font-size: 12px;
+    }
+}
